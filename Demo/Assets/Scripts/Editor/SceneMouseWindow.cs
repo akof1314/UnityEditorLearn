@@ -20,6 +20,10 @@ public class SceneMouseWindow : EditorWindow
     void OnDestroy()
     {
         SceneView.onSceneGUIDelegate -= OnSceneGUI;
+        if (capSphere != null)
+        {
+            DestroyImmediate(capSphere.gameObject);
+        }
     }
 
     private void OnSceneGUI(SceneView sceneView)
